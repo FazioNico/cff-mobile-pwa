@@ -9,7 +9,8 @@
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "ionic:serve": "ionic-app-scripts serve",
+    "deploy.gh": "gulp  --gulpfile ./tools/deploy-ghpage.gulp.js"
   },
   "dependencies": {
     "@angular/common": "4.4.6",
@@ -33,6 +34,8 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.0.1",
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4",
     "typescript": "2.3.4",
     "webpack-bundle-analyzer": "^2.9.0"
   },
