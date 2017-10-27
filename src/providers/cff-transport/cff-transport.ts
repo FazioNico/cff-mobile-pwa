@@ -26,7 +26,7 @@ export class CffTransportProvider {
       transport: 'https://transport.opendata.ch/v1/connections',
       transportBeta: 'https://transport-beta.opendata.ch/v1/connections',
       search: 'https://timetable.search.ch/api/route.fr.json',
-      complete: 'https://timetable.search.ch/api/completion.fr.json'
+      completion: 'https://timetable.search.ch/api/completion.fr.json'
     }
   }
 
@@ -36,7 +36,7 @@ export class CffTransportProvider {
   }
 
   autoComplete(query:string):Observable<any>{
-    return this.http.get(`${this.url.complete}?term=${query}`)
+    return this.http.get(`${this.url.completion}?term=${query}`)
                     .map(res => res.json())
   }
 }
