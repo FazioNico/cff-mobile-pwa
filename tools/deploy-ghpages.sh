@@ -14,7 +14,7 @@ function checkVersion {
 
 checkVersion
 # force add ./www to git
-git add -f ./www/
+git add -f www/
 # add all others files
 git add --all
 # commit changes
