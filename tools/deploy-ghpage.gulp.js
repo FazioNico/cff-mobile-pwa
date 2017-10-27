@@ -8,8 +8,9 @@
 
  var gulp = require('gulp');
  var ghPages = require('gulp-gh-pages');
+ const path = require('path');
 
- var path = './www';
+ var path = path.resolve()+'/www';
 
  gulp.task('deploy', function() {
    return gulp.src(path+'/**/*')
