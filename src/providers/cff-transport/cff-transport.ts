@@ -3,7 +3,7 @@
  * @Date:   27-10-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 27-10-2017
+ * @Last modified time: 28-10-2017
  */
 
 import { Injectable } from '@angular/core';
@@ -25,7 +25,8 @@ export class CffTransportProvider {
     this.url = {
       transport: 'https://transport.opendata.ch/v1/connections',
       transportBeta: 'https://transport-beta.opendata.ch/v1/connections',
-      search: 'https://timetable.search.ch/api/route.fr.json'
+      search: 'https://timetable.search.ch/api/route.fr.json',
+      complete: 'https://timetable.search.ch/api/completion.fr.json'
     }
   }
 
@@ -34,4 +35,8 @@ export class CffTransportProvider {
                     .map(res => res.json())
   }
 
+  autoComplete(query:string):Observable<any>{
+    return this.http.get(`${this.url.complete}?term=${query}`)
+                    .map(res => res.json())
+  }
 }

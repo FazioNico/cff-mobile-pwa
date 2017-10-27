@@ -3,13 +3,15 @@
 * @Date:   27-10-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 27-10-2017
+ * @Last modified time: 28-10-2017
 */
 
 import { Component, Inject } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable } from "rxjs/Observable";
+
+import { CffTransportProvider } from "../../providers/cff-transport";
 
 /**
 * Generated class for the IndexPage page.
@@ -29,10 +31,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class IndexPage {
 
   private form:FormGroup;
+  private cityList:Observable<any>|null;
+  private dropDownActive:any;
 
   constructor(
     public navCtrl: NavController,
     @Inject(FormBuilder) fb: FormBuilder,
+    private _api:CffTransportProvider
   ) {
     this.form = fb.group({
       from: ['Genève', Validators.compose([Validators.required, Validators.minLength(2)])],
@@ -52,4 +57,17 @@ export class IndexPage {
     this.navCtrl.push('ResultsPage', {search:this.form.value})
   }
 
+  autoComplet($event:any, inputName:string):void{
+    this.dropDownActive = inputName
+    if($event.target.value.length<=2){
+      this.cityList = null;
+      return
+    }
+    this.cityList = this._api.autoComplete($event.target.value)
+  }
+
+  selectCity(city:string, inputName:string){
+    this.form.patchValue({[inputName]:city})
+    this.cityList = null;
+  }
 }
