@@ -20,9 +20,9 @@ git add --all
 # commit changes
 git commit -m "add www folder"
 # create gh-pages  branch with www folder
-git subtree split -P ./www/ -b gh-pages 
+git subtree split -P www/ -b gh-pages
 # remove ./www folders from git
-git rm -r --cached ./www/
+git rm -r --cached www/
 # add files (stage removed files)
 git add --all
 # commit changes
