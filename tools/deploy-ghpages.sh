@@ -19,8 +19,8 @@ git add -f ./www/
 git add --all
 # commit changes
 git commit -m "add www folder"
-# create .publish  branch with www folder
-git subtree split -P ./www/ -b .publish
+# create gh-pages  branch with www folder
+git subtree split -P ./www/ -b gh-pages
 # remove ./www folders from git
 git rm -r --cached ./www/
 # add files (stage removed files)
@@ -28,7 +28,7 @@ git add --all
 # commit changes
 git commit -m 'rm .temp folder'
 
-# push .publish branch on remote .publish branch
-git push origin .publish:.publish --force
-# delete local .publish branch
-git branch -D .publish
+# push gh-pages branch on remote gh-pages branch
+git push origin gh-pages:gh-pages --force
+# delete local gh-pages branch
+git branch -D gh-pages
