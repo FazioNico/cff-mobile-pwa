@@ -1,0 +1,108 @@
+// @Author: Nicolas Fazio <webmaster-fazio>
+// @Date:   27-10-2017
+// @Email:  contact@nicolasfazio.ch
+// @Last modified by:   webmaster-fazio
+// @Last modified time: 27-10-2017
+
+connection {
+
+  .icon-type {
+    max-height: 16px;
+    max-width: 16px;
+    display: inline-block;
+    margin-right: -2px;
+    border-radius: 3px;
+    overflow: hidden;
+
+    svg {
+      background: #27348b;
+      fill: #fff;
+
+    }
+  }
+  .icon-cat {
+    border-radius: 3px;
+    background: color($colors, primary, base);
+    display: inline-block;
+    max-height: 16px;
+    max-width: 48px;
+
+    svg {
+      fill: #fff;
+    }
+  }
+  .icon-cat.white{
+    max-height: 18px;
+    background: #fff;
+    border: solid 2px color($colors, primary, base);
+    svg {
+      fill: color($colors, primary, base);
+    }
+  }
+
+  // line view
+  .mod_timetable_pearl_chain {
+    list-style: none;
+    padding: 0;
+    font-size: inherit;
+    margin: 3px 0;
+    position: relative;
+    height: .8em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    flex: 1;
+  }
+  ol {
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+  }
+  .mod_timetable_pearl_chain_stop:first-child {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 .8em;
+    flex: 0 0 .8em;
+    min-width: 0;
+  }
+  .mod_timetable_pearl_chain_stop {
+    display: block;
+    position: relative;
+    margin-top: .06667em;
+  }
+
+  .mod_timetable_pearl_chain_stop:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: .73333em;
+    top: 50%;
+    height: .13333em;
+    margin-top: -.06667em;
+    background: color($colors, dark, base);
+  }
+  .mod_timetable_pearl_chain_stop:after  {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 0;
+    display: block;
+    height: .1rem;
+    width: .1rem;
+    margin-top: -.6rem;
+    border-radius: 50%;
+    background: color($colors, dark, base);
+    border: .4em solid color($colors, dark, base);
+    box-shadow: 0 0 0 0.06667em color($colors, secondary, base);
+    transition: background .3s ease-out;
+  }
+  .mod_timetable_pearl_chain_stop:first-child:after, .mod_timetable_pearl_chain_stop:last-child:after {
+    width: .1rem;
+    height: .1rem;
+    border: .6rem solid color($colors, dark, base);
+    margin-top: -.4em;
+  }
+
+}

@@ -1,0 +1,29 @@
+// @Author: Nicolas Fazio <webmaster-fazio>
+// @Date:   27-10-2017
+// @Email:  contact@nicolasfazio.ch
+// @Last modified by:   webmaster-fazio
+// @Last modified time: 27-10-2017
+
+expandable {
+
+  .expand-wrapper {
+    transition: .8s linear;
+    padding: 0px;
+
+    div, ol {
+      padding-top: 15px;
+    }
+  }
+
+  .collapsed {
+    height: auto!important;
+    max-height:  0!important;
+  }
+
+  ol {
+    list-style: none;
+    padding-left: 10px;
+    margin-top:0px;
+    padding-bottom:0px;
+  }
+}

@@ -1,3 +1,9 @@
+// @Author: Nicolas Fazio <webmaster-fazio>
+// @Date:   27-10-2017
+// @Email:  contact@nicolasfazio.ch
+// @Last modified by:   webmaster-fazio
+// @Last modified time: 27-10-2017
+
 // http://ionicframework.com/docs/theming/
 
 
@@ -14,3 +20,18 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.toolbar-background-md {
+  background: transparent;
+}
+ion-buttons.bar-buttons.bar-buttons-md {
+  margin-right: 1rem;
+}
+
+.button-large-md {
+  font-weight: 300;
+}
+ion-spinner {
+  margin: 60px auto;
+  display: block;
+}

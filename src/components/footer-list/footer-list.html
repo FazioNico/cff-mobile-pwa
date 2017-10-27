@@ -1,0 +1,14 @@
+<!-- Generated template for the FooterListComponent component -->
+<aside margin-top>
+  <ion-list no-margin>
+    <button (click)="expandItem(item)" ion-item *ngFor="let item of items">
+      <h2>{{item.title}}</h2>
+      <expandable [expandHeight]="(item.html.length/80)/1" [datas]="{html:true}" [expanded]="item.expanded">
+        <div [innerHTML]="item.html"></div>
+      </expandable>
+      <button ion-button clear item-end>
+        <ion-icon color="light" name="add-circle"></ion-icon>
+      </button>
+    </button>
+  </ion-list>
+</aside>
