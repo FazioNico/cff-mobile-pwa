@@ -28,10 +28,10 @@ config.dev.plugins.push(...[
 config.prod.devtool = 'cheap-source-map';
 config.prod.plugins.push(...[
   new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-  new BundleAnalyzerPlugin({
-    reportFilename: 'report.html',
-    openAnalyzer: true,
-  })
+  // new BundleAnalyzerPlugin({
+  //   reportFilename: 'report.html',
+  //   openAnalyzer: true,
+  // })
 ])
 
 module.exports = {
