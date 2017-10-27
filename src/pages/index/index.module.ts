@@ -10,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { IndexPage } from './index';
 import { ComponentsModule } from "../../components/components.module";
+import { IndexI18nModule } from "./i18n";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ComponentsModule } from "../../components/components.module";
   ],
   imports: [
     ComponentsModule,
+    IndexI18nModule,
     IonicPageModule.forChild(IndexPage),
   ],
   providers: []

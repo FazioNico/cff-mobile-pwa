@@ -6,7 +6,7 @@ Ionic pages and navigation.
 -->
 <ion-header no-border>
   <ion-navbar>
-    <ion-title>Results</ion-title>
+    <ion-title>{{ 'results.title'|translate }}</ion-title>
     <ion-buttons end>
       <logo-svg></logo-svg>
     </ion-buttons>
@@ -22,7 +22,7 @@ Ionic pages and navigation.
         <span class="search">{{ search?.from }}</span> <ion-icon name="arrow-forward"></ion-icon> <span class="search">{{ search?.to }}</span>
       </h1>
       <p class="headerTimeDetail" text-center>
-        {{ search?.datetime|moment:'ddd DD.MM.YYYY' }}. Départ à {{ res?.connections[0]?.departure|moment:'H:mm' }}
+        {{ search?.datetime|moment:'ddd DD.MM.YYYY' }}. {{ 'results.departure'|translate }} {{ res?.connections[0]?.departure|moment:'H:mm' }}
       </p>
       <!-- {{ res|json}} -->
       <ion-list>
@@ -44,16 +44,11 @@ Ionic pages and navigation.
         <button
           color="light"
           outline
-          ion-button>Rechercher les relations suivantes
+          ion-button>{{ 'results.next'|translate }}
         </button>
       </div>
       <div padding margin-bottom >
-        <p>
-          <span>
-            Informations sur le voyage valables du 11/12/16 au 08/12/18.
-            <br> Toutes informations, correspondances et observation de l'horaire non garanties. Veuillez vous informer des changements possibles avant votre départ. Afficher plus
-          </span>
-        </p>
+        <p [innerHTML]="'results.infos'|translate"></p>
       </div>
     </section>
 

@@ -14,6 +14,7 @@ import { ResultsPage } from './results';
 import { CffTransportProvider } from "../../providers/cff-transport";
 import { ComponentsModule } from "../../components/components.module";
 import { PipesModule } from "../../pipes/pipes.module";
+import { ResultsI18nModule } from "./i18n";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PipesModule } from "../../pipes/pipes.module";
     HttpModule,
     PipesModule,
     ComponentsModule,
+    ResultsI18nModule,
     IonicPageModule.forChild(ResultsPage),
   ],
   providers: [CffTransportProvider]

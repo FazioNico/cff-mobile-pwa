@@ -21,7 +21,7 @@ export class ConnectionCatIconPipe implements PipeTransform {
   * Takes a value and makes it lowercase.
   */
   transform(value: string) {
-    console.log('pipe->', value)
+    //console.log('pipe->', value)
     let newValue:string;
     switch (value) {
       case 'RE':

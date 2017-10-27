@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+import { I18nModule } from "../i18n";
 
 const ionicAppConfig:Object = {
   tabsPlacement: 'bottom',
@@ -26,6 +27,7 @@ const ionicAppConfig:Object = {
   ],
   imports: [
     BrowserModule,
+    I18nModule,
     IonicModule.forRoot(MyApp, ionicAppConfig)
   ],
   bootstrap: [IonicApp],
