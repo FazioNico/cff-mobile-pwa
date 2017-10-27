@@ -10,9 +10,9 @@
  var ghPages = require('gulp-gh-pages');
  const path = require('path');
 
- var path = path.resolve()+'/www';
+ var build = path.resolve()+'/www';
 
  gulp.task('deploy', function() {
-   return gulp.src(path+'/**/*')
+   return gulp.src(build+'/**/*')
      .pipe(ghPages());
  });
