@@ -17,11 +17,10 @@
       </p>
     </ion-col>
   </ion-row>
-
-  <ion-row>
+<!-- {{ connection.legs[0].stops.length|json}} -->
+  <!-- <ion-row>
       <ion-col col-3>{{connection.legs[0].departure|moment:'H:mm'}}</ion-col>
       <ion-col>
-        <!-- {{ connection.legs[0].stops.length|json}} -->
         <ol class="mod_timetable_pearl_chain">
           <li class="mod_timetable_pearl_chain_stop"></li>
           <li *ngFor="let stop of connection.legs[0].stops" class="mod_timetable_pearl_chain_stop" style="width: 50%"></li>
@@ -32,6 +31,21 @@
         </ol>
       </ion-col>
       <ion-col col-2>{{connection.legs[1].arrival|moment:'H:mm'}}</ion-col>
+  </ion-row> -->
+  <ion-row>
+      <ion-col col-3>{{connection.legs[0].departure|moment:'H:mm'}}</ion-col>
+      <ion-col>
+        <ol  *ngIf="connection.legs.length>2;else noLegs" class="mod_timetable_pearl_chain">
+            <li *ngFor="let leg of connection.legs" class="mod_timetable_pearl_chain_stop multiStop"></li>
+        </ol>
+        <ng-template #noLegs>
+          <ol class="mod_timetable_pearl_chain">
+            <li class="mod_timetable_pearl_chain_stop"></li>
+            <li class="mod_timetable_pearl_chain_stop" style="width: 100%"></li>
+          </ol>
+        </ng-template>
+      </ion-col>
+      <ion-col col-2>{{connection.legs[connection.legs.length-1].arrival|moment:'H:mm'}}</ion-col>
   </ion-row>
 
   <ion-row>

@@ -2,7 +2,7 @@
 // @Date:   27-10-2017
 // @Email:  contact@nicolasfazio.ch
 // @Last modified by:   webmaster-fazio
-// @Last modified time: 27-10-2017
+// @Last modified time: 29-10-2017
 
 connection {
 
@@ -104,5 +104,7 @@ connection {
     border: .6rem solid color($colors, dark, base);
     margin-top: -.4em;
   }
-
+  .mod_timetable_pearl_chain_stop.multiStop{
+    width: 50%;
+  }
 }
