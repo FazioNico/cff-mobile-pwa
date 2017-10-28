@@ -3,13 +3,14 @@
 * @Date:   27-10-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 27-10-2017
+ * @Last modified time: 28-10-2017
 */
 
 import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
-import { datasHtml } from "./footer-list.datas";
+import { TranslateService } from '@ngx-translate/core';
+import { loadTranslations } from "./i18n/footer-list.service";
 
 /**
 * Generated class for the FooterListComponent component.
@@ -26,30 +27,36 @@ export class FooterListComponent {
   public items:any = [];
 
   constructor(
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    public translate: TranslateService
   ) {
+
+
+    let dataLangue = loadTranslations(translate)
+    // console.log(dataLangue)
     this.items = [
       {
-        title: 'Contact',
-        html: this.sanitizer.bypassSecurityTrustHtml(datasHtml.contact),
+        title: dataLangue.contact.title,
+        html: this.sanitizer.bypassSecurityTrustHtml(dataLangue.contact.data),
         expanded: false
       },
       {
-        title: 'Informations sur le trafic ferroviaire',
-        html: this.sanitizer.bypassSecurityTrustHtml(datasHtml.infoTraffic),
+        title: dataLangue.infoTraffic.title,
+        html: this.sanitizer.bypassSecurityTrustHtml(dataLangue.infoTraffic.data),
         expanded: false
       },
       {
-        title: 'Newsletter et médias sociaux',
-        html: this.sanitizer.bypassSecurityTrustHtml(datasHtml.newsLetter),
+        title: dataLangue.newsLetter.title,
+        html: this.sanitizer.bypassSecurityTrustHtml(dataLangue.newsLetter.data),
         expanded: false
       },
       {
-        title: 'Entreprise',
-        html: this.sanitizer.bypassSecurityTrustHtml(datasHtml.entreprise),
+        title: dataLangue.entreprise.title,
+        html: this.sanitizer.bypassSecurityTrustHtml(dataLangue.entreprise.data),
         expanded: false
       },
     ];
+
   }
 
   expandItem(item:any):void{
