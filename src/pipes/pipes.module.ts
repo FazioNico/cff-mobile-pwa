@@ -9,11 +9,14 @@
 import { NgModule } from '@angular/core';
 import { MomentPipe } from './moment/moment';
 import { ConnectionCatIconPipe } from './connection-cat-icon/connection-cat-icon';
+import { ConnectionTypeIconPipe } from './connection-type-icon/connection-type-icon';
 @NgModule({
 	declarations: [MomentPipe,
-    ConnectionCatIconPipe],
+    ConnectionCatIconPipe,
+    ConnectionTypeIconPipe],
 	imports: [],
 	exports: [MomentPipe,
-    ConnectionCatIconPipe]
+    ConnectionCatIconPipe,
+    ConnectionTypeIconPipe]
 })
 export class PipesModule {}

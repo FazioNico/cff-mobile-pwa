@@ -39,7 +39,14 @@ connection {
       fill: color($colors, primary, base);
     }
   }
-
+  span.isBus {
+      font-size: 1.3rem;
+      transform: translateY(-0.2rem);
+      display: inline-block;
+      margin-left: 2px;
+      font-weight: 600;
+  }
+  
   // line view
   .mod_timetable_pearl_chain {
     list-style: none;
