@@ -8,7 +8,7 @@
 
 import { Component } from '@angular/core';
 import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
-import { availableLanguages } from "../../i18n";
+import { availableLanguages, sysOptions } from "../../i18n";
 
 /**
 * Generated class for the TranslateSwitchComponent component.
@@ -23,7 +23,7 @@ import { availableLanguages } from "../../i18n";
 export class TranslateSwitchComponent {
 
   public languages:any[] = availableLanguages;
-  public currentLang:string;
+  public currentLang:string = sysOptions.systemLanguage;
 
   constructor(
     public translate: TranslateService
@@ -31,7 +31,6 @@ export class TranslateSwitchComponent {
     this.translate.onLangChange.subscribe((event: TranslationChangeEvent) => {
       this.currentLang = event.lang
     });
-    this.currentLang = this.translate.currentLang
   }
 
   applyLanguage(code:string) {

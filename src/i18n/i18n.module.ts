@@ -3,7 +3,7 @@
 * @Date:   21-10-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 22-10-2017
+ * @Last modified time: 29-10-2017
 */
 
 import { NgModule, ModuleWithProviders } from '@angular/core';
@@ -15,7 +15,7 @@ import { Globalization } from '@ionic-native/globalization';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // Import ngx-translate config
-import { availableLanguages, defaultLanguage } from "./i18n.config";
+import { availableLanguages, defaultLanguage, sysOptions } from "./i18n.config";
 
 // create root translateLoader with HttpClient to load .json files
 export function translateLoaderFactory(http: HttpClient) {
@@ -60,6 +60,7 @@ export class I18nModule {
       // console.log('browserLanguage->',browserLanguage)
       const language = this.getSuitableLanguage(browserLanguage);
       this.translate.use(language);
+      sysOptions.systemLanguage = language;
     }
   }
 
@@ -67,6 +68,7 @@ export class I18nModule {
     this.globalization.getPreferredLanguage().then(result => {
       var language = this.getSuitableLanguage(result.value);
       this.translate.use(language);
+      sysOptions.systemLanguage = language;
     });
   }
 
