@@ -1,0 +1,16 @@
+<!-- Generated template for the TranslateSwitchComponent component -->
+<!-- <ion-list>
+  <ion-item-group radio-group [(ngModel)]="selectedLanguage">
+    <ion-item-divider color="light">Languages</ion-item-divider>
+    <ion-item (click)="applyLanguage()" *ngFor="let lang of languages">
+      <ion-label>{{lang.name}}</ion-label>
+      <ion-radio [value]="lang.code"></ion-radio>
+    </ion-item>
+  </ion-item-group>
+</ion-list> -->
+
+<ul>
+  <li [ngClass]="{'active': (currentLang === lang.code)}" (click)="applyLanguage(lang.code)" *ngFor="let lang of languages">
+    {{lang.code}}
+  </li>
+</ul>

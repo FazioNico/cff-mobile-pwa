@@ -1,0 +1,24 @@
+// @Author: Nicolas Fazio <webmaster-fazio>
+// @Date:   29-10-2017
+// @Email:  contact@nicolasfazio.ch
+// @Last modified by:   webmaster-fazio
+// @Last modified time: 29-10-2017
+
+translate-switch {
+  ul {
+    list-style: none;
+    display: inline-block;
+    padding: 35px 20px;
+    text-align: center;
+    width: 100%;
+
+    li {
+      display: inherit;
+      margin: 0px 15px;
+      cursor: pointer;
+    }
+    li.active {
+      border-bottom: solid 1px;
+    }
+  }
+}

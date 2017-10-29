@@ -3,7 +3,7 @@
 * @Date:   21-10-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 22-10-2017
+ * @Last modified time: 29-10-2017
 */
 
 export const availableLanguages:{code:string,name:string}[] = [
@@ -17,3 +17,6 @@ export const availableLanguages:{code:string,name:string}[] = [
   }
 ];
 export const defaultLanguage = 'en';
+export const sysOptions = {
+	systemLanguage: defaultLanguage
+}

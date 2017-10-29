@@ -16,11 +16,13 @@ import { LogoSvgComponent } from './logo-svg/logo-svg';
 import { ConnectionComponent } from './connection/connection';
 import { ExpandableComponent } from './expandable/expandable';
 import { FooterListComponent } from './footer-list/footer-list';
+import { TranslateSwitchComponent } from './translate-switch/translate-switch';
 @NgModule({
 	declarations: [LogoSvgComponent,
     ConnectionComponent,
     ExpandableComponent,
-    FooterListComponent
+    FooterListComponent,
+    TranslateSwitchComponent
 	],
 	imports: [
 		CommonModule,
@@ -31,7 +33,8 @@ import { FooterListComponent } from './footer-list/footer-list';
 		LogoSvgComponent,
     ConnectionComponent,
     ExpandableComponent,
-    FooterListComponent
+    FooterListComponent,
+    TranslateSwitchComponent
 	]
 })
 export class ComponentsModule {}
