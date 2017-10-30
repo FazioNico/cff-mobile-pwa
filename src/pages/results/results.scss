@@ -14,6 +14,11 @@ page-results {
   section .item-md {
     background-color: color($colors, secondary, base);
   }
+  section {
+    .item-inner, .input-wrapper, ion-label {
+      overflow: visible;
+    }
+  }
   span.search {
     padding: 0px 10px;
     transform: translateY(-3px);
@@ -37,7 +42,7 @@ page-results {
     background: color($colors, primary, base);
     min-height: 52px;
   }
-  ion-icon.icon.icon-md.icon-md-white.ion-md-add-circle, 
+  ion-icon.icon.icon-md.icon-md-white.ion-md-add-circle,
   ion-icon.icon.icon-md.icon-md-white.ion-md-remove-circle {
       color: color($colors, white, base);
   }

@@ -17,19 +17,19 @@ Ionic pages and navigation.
 <ion-content>
 <!-- {{ results|async|json}} -->
   <div *ngIf="results|async as res; else loading" >
-    <section >
+    <section *ngIf="res.connections">
       <h1 text-center>
         <span class="search">{{ search?.from }}</span> <ion-icon name="arrow-forward"></ion-icon> <span class="search">{{ search?.to }}</span>
       </h1>
       <p class="headerTimeDetail" text-center>
-        {{ search?.date|moment:'DD.MM.YYYY' }}. {{ 'results.departure'|translate }} {{ res?.connections[0]?.departure|moment:'H:mm' }}
+        {{ search?.date }}. {{ 'results.departure'|translate }} {{ res?.connections[0]?.departure|moment:'H:mm' }}
       </p>
       <!-- {{ res|json}} -->
       <ion-list>
 
         <button (click)="displayDetails(connection)" ion-item *ngFor="let connection of res?.connections">
           <connection [connection]='connection'></connection>
-          <expandable [expandHeight]="connection.legs[0].stops.length+2" [datas]="{stops:connection.legs[0].stops, from:{time:connection.legs[0].departure, name:connection.legs[0].name}, to:{time:connection.legs[1].arrival, name:connection.legs[1].name} }" [expanded]="connection.expanded"></expandable>
+          <expandable [datas]="{legs:connection.legs, from:{time:connection.legs[0].departure, name:connection.legs[0].name}, to:{time:connection.legs[1].arrival, name:connection.legs[1].name} }" [expanded]="connection.expanded"></expandable>
           <!-- no api to buy ticket or get ticket price ... waiting for ;-)
           <span (click)="buyTicket($event, connection)" ion-button clear item-end>
             <span class="ticket">
@@ -44,6 +44,7 @@ Ionic pages and navigation.
 
       <div padding margin-bottom text-center>
         <button
+          (click)="displayNext(res.connections[res.connections.length-1].departure)"
           color="light"
           outline
           ion-button>{{ 'results.next'|translate }}

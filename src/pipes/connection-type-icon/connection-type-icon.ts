@@ -3,7 +3,7 @@
  * @Date:   29-10-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 29-10-2017
+ * @Last modified time: 30-10-2017
  */
 
 import { Pipe, PipeTransform } from '@angular/core';
@@ -21,7 +21,10 @@ export class ConnectionTypeIconPipe implements PipeTransform {
    * Takes a value and makes it lowercase.
    */
   transform(value: string) {
-    // console.log('pipe->',value)
+    //console.log('pipe->',value)
+    if(!value){
+      return value
+    }
     let newValue:string;
     switch (true) {
       case value.includes('bus'):

@@ -1,20 +1,42 @@
-<div #expandWrapper class='expand-wrapper' [class.collapsed]="!expanded">
-  <!-- {{ datas|json }} -->
+<div #expandWrapper class='expand-wrapper' [class.collapsed]="!expanded" [class.leg]="datas.legs">
+
   <div *ngIf="datas.html;else detailStop">
     <ng-content></ng-content>
   </div>
 
   <ng-template #detailStop>
-    <ol >
-      <li>
-        <p>{{ datas.from.time|moment:'H:mm' }} - {{ datas.from.name }}</p>
-      </li>
-      <li *ngFor="let stop of datas.stops;">
-        <!-- {{ stop|json }} -->
-        <p>{{ stop.arrival|moment:'H:mm' }} - {{ stop.name }} </p>
-      </li>
-      <li>
-        <p>{{ datas.to.time|moment:'H:mm' }} - {{ datas.to.name }}</p>
+    <ol>
+      <li *ngFor="let leg of datas.legs;let i = index">
+
+          <div>{{ leg.departure|moment:'H:mm' }} - {{ leg.name }}</div>
+
+          <div class="icon-type">
+            <svg *ngIf="(leg?.type|connectionTypeIcon)" viewBox="0 0 20 20" width="100%" height="100%">
+              <path [attr.d]="leg?.type|connectionTypeIcon" transform="translate(2 2)" id="sbb_oev_b_t02"></path>
+            </svg>
+          </div>
+
+          <span *ngIf="leg.type && leg.type !== 'walk'">
+            <div *ngIf="!leg.type.includes('bus');else isBus" [ngClass]="{'icon-cat': true, 'white': (leg.line === 'RE')}">
+              <svg viewBox="0 0 59 20" width="100%" height="100%">
+                <path [attr.d]="leg.line|connectionCatIcon"></path>
+              </svg>
+            </div>
+          </span>
+          <span *ngIf="leg.type === 'walk'" class="isWalking">
+            '{{ leg.runningtime|moment:'m':true}}
+          </span>
+          <ng-template #isBus>
+            <span class="isBus">
+              BUS {{ leg.line }}
+            </span>
+          </ng-template>
+          <p *ngIf="leg.type !== 'walk'">Direction: {{ leg.terminal }}</p>
+
+          <div *ngIf="leg.exit">{{ leg.exit.arival|moment:'H:mm' }} - {{ leg.exit.name }}</div>
+          <div *ngIf="i !== datas.legs.length -2" class="change">
+            Changement...
+          </div>
       </li>
     </ol>
   </ng-template>

@@ -2,7 +2,7 @@
 // @Date:   27-10-2017
 // @Email:  contact@nicolasfazio.ch
 // @Last modified by:   webmaster-fazio
-// @Last modified time: 27-10-2017
+// @Last modified time: 30-10-2017
 
 expandable {
 
@@ -10,9 +10,17 @@ expandable {
     transition: .8s linear;
     padding: 0px;
 
+
     div, ol {
       padding-top: 15px;
     }
+  }
+
+  .expand-wrapper.leg {
+    padding: 0px 15px;
+    background: #fff;
+    margin-left: -15px;
+    margin-right: -50px;
   }
 
   .collapsed {
@@ -25,5 +33,66 @@ expandable {
     padding-left: 10px;
     margin-top:0px;
     padding-bottom:0px;
+
+    span {
+      display: inline-block;
+      transform: translateY(-1px);
+    }
+    span.isWalking {
+      transform: translateY(-2px);
+    }
+    .icon-type {
+      max-height: 16px;
+      max-width: 16px;
+      display: inline-block;
+      margin-right: 0px;
+      margin-left: 53px;
+      border-radius: 3px;
+
+      svg {
+        background: #27348b;
+        fill: #fff;
+
+      }
+    }
+
+    .icon-cat {
+      border-radius: 3px;
+      background: color($colors, primary, base);
+      display: inline-block;
+      max-height: 16px;
+      max-width: 48px;
+      padding-top: 0px;
+
+      svg {
+        fill: #fff;
+      }
+    }
+    .icon-cat.white{
+      max-height: 18px;
+      background: #fff;
+      border: solid 2px color($colors, primary, base);
+      svg {
+        fill: color($colors, primary, base);
+      }
+    }
+
+    p {
+      padding-left: 53px;
+    }
+    li {
+      padding-bottom: 75px
+    }
+    .change {
+      width: 100%;
+      padding: 15px 25px;
+      background: #f6f6f6;
+      position: absolute;
+      left: 0;
+      margin: 20px 0;
+    }
+    li:last-child {
+      display: none;
+    }
   }
 }

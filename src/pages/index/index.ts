@@ -40,7 +40,7 @@ export class IndexPage {
     private _api:CffTransportProvider
   ) {
     this.form = fb.group({
-      from: ['Genève', Validators.compose([Validators.required, Validators.minLength(2)])],
+      from: ['Choulex, village', Validators.compose([Validators.required, Validators.minLength(2)])],
       to: ['Lausanne', Validators.compose([Validators.required, Validators.minLength(2)])],
       date: [new Date(Date.now()).toISOString()],
       time: [new Date(Date.now()).toISOString()],
@@ -63,11 +63,6 @@ export class IndexPage {
       date: `${dFR.split('/')[1]}/${dFR.split('/')[0]}/${dFR.split('/')[2]}`,
       time: `${tFR.split(':')[0]}:${tFR.split(':')[1]}`
     }
-    console.log(
-      // `${dFR.split('/')[1]}/${dFR.split('/')[0]}/${dFR.split('/')[2]}`,
-      // `${tFR.split(':')[0]}:${tFR.split(':')[1]}`,
-      queryReady
-    )
 
     this.navCtrl.push('ResultsPage', {search:queryReady})
   }

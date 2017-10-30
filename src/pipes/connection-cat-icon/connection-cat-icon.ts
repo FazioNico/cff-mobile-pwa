@@ -3,7 +3,7 @@
 * @Date:   27-10-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 27-10-2017
+ * @Last modified time: 30-10-2017
 */
 
 import { Pipe, PipeTransform } from '@angular/core';
@@ -22,6 +22,9 @@ export class ConnectionCatIconPipe implements PipeTransform {
   */
   transform(value: string) {
     //console.log('pipe->', value)
+    if(!value){
+      return value
+    }
     let newValue:string;
     switch (value) {
       case 'RE':

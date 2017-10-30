@@ -48,9 +48,11 @@ export class ResultsPage {
     this.results = this._api.fromTo(this.search)
                             .map(
                               (res:any) => {
-                                res.connections = res.connections.map(
-                                  (conn:any) => Object.assign({}, conn, {expanded:false})
-                                )
+                                (res.connections)
+                                ? res.connections = res.connections.map(
+                                    (conn:any) => Object.assign({}, conn, {expanded:false})
+                                  )
+                                : null;
                                 return res
                               }
                             )
@@ -58,6 +60,24 @@ export class ResultsPage {
 
   displayDetails(connection:any):void{
     connection.expanded = !connection.expanded
+  }
+
+  displayNext(time:string):void{
+    //this.search.time = time
+    let tFR = new Date(new Date(time).toISOString()).toLocaleString("fr").split('à')[1].replace(/\s/g,'')
+    let tReady = `${tFR.split(':')[0]}:${tFR.split(':')[1]}`
+    this.search.time = tReady
+    this.results = this._api.fromTo(this.search)
+                            .map(
+                              (res:any) => {
+                                (res.connections)
+                                ? res.connections = res.connections.map(
+                                    (conn:any) => Object.assign({}, conn, {expanded:false})
+                                  )
+                                : null;
+                                return res
+                              }
+                            )
   }
 
   // no api to buy ticket or get ticket price ... waiting for ;-)
