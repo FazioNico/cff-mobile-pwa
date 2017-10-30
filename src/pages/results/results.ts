@@ -31,7 +31,7 @@ import { CffTransportProvider} from "../../providers/cff-transport";
 })
 export class ResultsPage {
 
-  public readonly search:{from:string,to:string}
+  public readonly search:{from:string,to:string,limit?:string,date:string,time:string}
   public results:Observable<any>
 
   constructor(

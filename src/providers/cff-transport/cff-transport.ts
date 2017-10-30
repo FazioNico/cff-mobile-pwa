@@ -3,7 +3,7 @@
  * @Date:   27-10-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 28-10-2017
+ * @Last modified time: 30-10-2017
  */
 
 import { Injectable } from '@angular/core';
@@ -30,8 +30,8 @@ export class CffTransportProvider {
     }
   }
 
-  fromTo(data:{from:string,to:string,limit?:string}):Observable<any>{
-    return this.http.get(`${this.url.search}?from=${data.from}&to=${data.to}&limit=${data.limit||'1'}`)
+  fromTo(data:{from:string,to:string,limit?:string,date:string,time:string}):Observable<any>{
+    return this.http.get(`${this.url.search}?from=${data.from}&to=${data.to}&date=${data.date}&time=${data.time}&limit=${data.limit||'1'}`)
                     .map(res => res.json())
   }
 

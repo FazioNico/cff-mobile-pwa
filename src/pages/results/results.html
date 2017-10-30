@@ -22,7 +22,7 @@ Ionic pages and navigation.
         <span class="search">{{ search?.from }}</span> <ion-icon name="arrow-forward"></ion-icon> <span class="search">{{ search?.to }}</span>
       </h1>
       <p class="headerTimeDetail" text-center>
-        {{ search?.datetime|moment:'ddd DD.MM.YYYY' }}. {{ 'results.departure'|translate }} {{ res?.connections[0]?.departure|moment:'H:mm' }}
+        {{ search?.date|moment:'DD.MM.YYYY' }}. {{ 'results.departure'|translate }} {{ res?.connections[0]?.departure|moment:'H:mm' }}
       </p>
       <!-- {{ res|json}} -->
       <ion-list>
