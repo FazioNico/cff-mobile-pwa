@@ -3,7 +3,7 @@
  * @Date:   11-10-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 27-10-2017
+ * @Last modified time: 30-10-2017
  */
 
  // See documentation:
@@ -75,7 +75,7 @@
     */
    excludeFiles: [
      /\.(wp|ios).(scss)$/i,
-     /(action-sheet|alert|avatar|badge|card|checkbox|chip|fab|menu|refresher|searchbare|segment|item-reorder|item-sliding|loading|note|picker|popover|radio|range|select|select|slides|toggle|split-pann|tabs|thumbnail|virtual-scroll|cordova)/i,
+     /(action-sheet|alert|avatar|badge|card|checkbox|chip|fab|menu|refresher|searchbare|segment|item-reorder|item-sliding|loading|note|popover|radio|range|select|select|slides|toggle|split-pann|tabs|thumbnail|virtual-scroll|cordova)/i,
    ],
 
    /**
