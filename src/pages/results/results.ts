@@ -3,7 +3,7 @@
  * @Date:   27-10-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 27-10-2017
+ * @Last modified time: 30-10-2017
  */
 
 import { Component } from '@angular/core';
@@ -60,6 +60,7 @@ export class ResultsPage {
     connection.expanded = !connection.expanded
   }
 
+  // no api to buy ticket or get ticket price ... waiting for ;-)
   buyTicket($event:Event, connection:any):void{
     $event.preventDefault()
     $event.stopPropagation()
