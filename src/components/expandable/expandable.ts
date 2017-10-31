@@ -3,7 +3,7 @@
 * @Date:   27-10-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 30-10-2017
+ * @Last modified time: 31-10-2017
 */
 
 import { Component, Input, ViewChild, ElementRef, Renderer } from '@angular/core';
@@ -44,11 +44,8 @@ export class ExpandableComponent {
 
   ngAfterViewInit(){
     if(this.datas.legs){
-      //console.log([this.datas.legs.pop()])
-      // this.datas.legs.pop()
-      // this.datas.legs.pop()
+
     }
-    // console.log(this.dataLegs)
     //this.renderer.setElementStyle(this.expandWrapper.nativeElement, 'height', (((this.expandHeight<=0)?1:this.expandHeight)*(20)||80) + 'px');
     this.renderer.setElementStyle(this.expandWrapper.nativeElement, 'max-height', '8000' + 'px');
   }
