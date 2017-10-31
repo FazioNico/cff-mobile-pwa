@@ -17,7 +17,7 @@ Ionic pages and navigation.
 <ion-content>
 <!-- {{ results|async|json}} -->
   <div *ngIf="results|async as res; else loading" >
-    <section *ngIf="res.connections">
+    <section *ngIf="res.connections;else noConnections">
       <h1 text-center>
         <span class="search">{{ search?.from }}</span> <ion-icon name="arrow-forward"></ion-icon> <span class="search">{{ search?.to }}</span>
       </h1>
@@ -54,6 +54,11 @@ Ionic pages and navigation.
         <p [innerHTML]="'results.infos'|translate"></p>
       </div>
     </section>
+    <ng-template #noConnections>
+      <section id="noConnections" margin>
+        <div padding [innerHTML]="'results.noConnections'|translate"></div>
+      </section>
+    </ng-template>
 
     <footer-list></footer-list>
     <translate-switch></translate-switch>

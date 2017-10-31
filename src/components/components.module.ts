@@ -10,6 +10,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicPageModule } from 'ionic-angular';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { PipesModule } from "../pipes/pipes.module";
 
 import { LogoSvgComponent } from './logo-svg/logo-svg';
@@ -27,7 +29,8 @@ import { TranslateSwitchComponent } from './translate-switch/translate-switch';
 	imports: [
 		CommonModule,
 		IonicPageModule,
-		PipesModule
+		PipesModule,
+		TranslateModule.forChild() // fix to use ngx-translate into shared components
 	],
 	exports: [
 		LogoSvgComponent,

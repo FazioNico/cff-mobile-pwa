@@ -21,7 +21,13 @@ export const locale = {
       `,
       "direction": "Direction",
       "change": "change",
-      "walk": "Walk"
+      "walk": "Walk",
+      "noConnections": `
+        <p>
+          Unfortunately, no connection can be found for your enquiry.
+          It may be the case that you are trying to make your journey on a date that is not possible at this starting or destination point or with the selected means of transport (e.g. sometimes stops are not served at weekends). 
+        </p>
+      `
     }
   }
 }

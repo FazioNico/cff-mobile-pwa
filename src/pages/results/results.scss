@@ -2,7 +2,7 @@
 // @Date:   27-10-2017
 // @Email:  contact@nicolasfazio.ch
 // @Last modified by:   webmaster-fazio
-// @Last modified time: 30-10-2017
+// @Last modified time: 31-10-2017
 
 page-results {
   h1 {
@@ -45,5 +45,10 @@ page-results {
   ion-icon.icon.icon-md.icon-md-white.ion-md-add-circle,
   ion-icon.icon.icon-md.icon-md-white.ion-md-remove-circle {
       color: color($colors, white, base);
+  }
+  #noConnections {
+    background-color:color($colors, primary, base);
+    color:color($colors, white, base);
+
   }
 }

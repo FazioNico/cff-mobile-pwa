@@ -21,7 +21,13 @@ export const locale = {
       `,
       "direction": "Direction",
       "change": "changement",
-      "walk": "Marche"
+      "walk": "Marche",
+      "noConnections": `
+        <p>
+          Malheureusement, aucune relation correspondant à votre demande n’a pas pu être trouvée.
+          Peut-être souhaitez-vous entreprendre votre voyage à une date à laquelle le lieu de départ ou de destination n’est pas accessible ou pas accessible avec le moyen de transport choisi (par ex. certains arrêts ne sont pas toujours desservis le week-end). 
+        </p>
+      `
     }
   }
 }
