@@ -3,7 +3,7 @@
  * @Date:   27-10-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 27-10-2017
+ * @Last modified time: 31-10-2017
  */
 
 import { Component } from '@angular/core';
@@ -25,8 +25,10 @@ export class MyApp {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
+      if(!platform.is('core') && !platform.is('mobileweb')){
+        statusBar.styleDefault();
+        splashScreen.hide();
+      }
     });
   }
 }
