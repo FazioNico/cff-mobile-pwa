@@ -33,7 +33,7 @@
           </ng-template>
           <p *ngIf="leg.type !== 'walk'">Direction: {{ leg.terminal }}</p>
 
-          <div *ngIf="leg.exit">{{ leg.exit.arival|moment:'H:mm' }} - {{ leg.exit.name }}</div>
+          <div *ngIf="leg.exit">{{ leg.exit.arrival|moment:'H:mm' }} - {{ leg.exit.name }}</div>
           <div *ngIf="i !== datas.legs.length -2" class="change">
             Changement...
           </div>
