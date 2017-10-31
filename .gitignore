@@ -27,7 +27,7 @@ platforms/
 plugins/
 plugins/android.json
 plugins/ios.json
-www/
+www/*
 $RECYCLE.BIN/
 
 .DS_Store
@@ -35,3 +35,4 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 
 config.ts
+!www/.htaccess
