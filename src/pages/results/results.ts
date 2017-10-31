@@ -63,28 +63,18 @@ export class ResultsPage {
   }
 
   displayNext(time:any):void{
-    // TODO: not working...
-    //
-    // //this.search.time = time
-    // console.log(time.getUTCHours())
-    // console.log(new Date(time))
-    // let tP = `${(new Date(time.toString()).getUTCHours())}:${new Date(time.toString()).getMinutes()}`
-    //
-    //
-    // // let tFR = new Date(new Date(time).toISOString()).toLocaleString("fr").split('à')[1].replace(/\s/g,'')
-    // // let tReady = `${tFR.split(':')[0]}:${tFR.split(':')[1]}`
-    // this.search.time = tP
-    // this.results = this._api.fromTo(this.search)
-    //                         .map(
-    //                           (res:any) => {
-    //                             (res.connections)
-    //                             ? res.connections = res.connections.map(
-    //                                 (conn:any) => Object.assign({}, conn, {expanded:false})
-    //                               )
-    //                             : null;
-    //                             return res
-    //                           }
-    //                         )
+    this.search.time = `${time.split(' ')[1].split(':')[0]}:${time.split(' ')[1].split(':')[1]}`
+    this.results = this._api.fromTo(this.search)
+                            .map(
+                              (res:any) => {
+                                (res.connections)
+                                ? res.connections = res.connections.map(
+                                    (conn:any) => Object.assign({}, conn, {expanded:false})
+                                  )
+                                : null;
+                                return res
+                              }
+                            )
   }
 
   // no api to buy ticket or get ticket price ... waiting for ;-)
