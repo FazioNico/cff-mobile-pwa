@@ -3,7 +3,7 @@
 * @Date:   27-10-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 30-10-2017
+ * @Last modified time: 31-10-2017
 */
 
 import { Component, Inject } from '@angular/core';
@@ -54,14 +54,15 @@ export class IndexPage {
 
     let d =  (this.form.get('date')||{value:new Date(Date.now())}).value
     let t =  (this.form.get('time')||{value:new Date(Date.now())}).value;
-    let dFR = new Date(new Date(d).toISOString()).toLocaleString("fr").split('à')[0].replace(/\s/g,'')
-    let tFR = new Date(new Date(t).toISOString()).toLocaleString("fr").split('à')[1].replace(/\s/g,'')
+
+    let dP = `${(new Date(d.toString()).getMonth())+1}/${new Date(d.toString()).getDate()}/${new Date(d.toString()).getFullYear()}`
+    let tP = `${(new Date(t.toString()).getUTCHours())}:${new Date(t.toString()).getMinutes()}`
 
     let queryReady = {
       from: (this.form.get('from')||{value:''}).value,
       to: (this.form.get('to')||{value:''}).value,
-      date: `${dFR.split('/')[1]}/${dFR.split('/')[0]}/${dFR.split('/')[2]}`,
-      time: `${tFR.split(':')[0]}:${tFR.split(':')[1]}`
+      date: dP,
+      time: tP
     }
 
     this.navCtrl.push('ResultsPage', {search:queryReady})

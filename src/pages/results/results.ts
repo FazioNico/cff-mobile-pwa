@@ -3,7 +3,7 @@
  * @Date:   27-10-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 30-10-2017
+ * @Last modified time: 31-10-2017
  */
 
 import { Component } from '@angular/core';
@@ -62,22 +62,29 @@ export class ResultsPage {
     connection.expanded = !connection.expanded
   }
 
-  displayNext(time:string):void{
-    //this.search.time = time
-    let tFR = new Date(new Date(time).toISOString()).toLocaleString("fr").split('à')[1].replace(/\s/g,'')
-    let tReady = `${tFR.split(':')[0]}:${tFR.split(':')[1]}`
-    this.search.time = tReady
-    this.results = this._api.fromTo(this.search)
-                            .map(
-                              (res:any) => {
-                                (res.connections)
-                                ? res.connections = res.connections.map(
-                                    (conn:any) => Object.assign({}, conn, {expanded:false})
-                                  )
-                                : null;
-                                return res
-                              }
-                            )
+  displayNext(time:any):void{
+    // TODO: not working...
+    //
+    // //this.search.time = time
+    // console.log(time.getUTCHours())
+    // console.log(new Date(time))
+    // let tP = `${(new Date(time.toString()).getUTCHours())}:${new Date(time.toString()).getMinutes()}`
+    //
+    //
+    // // let tFR = new Date(new Date(time).toISOString()).toLocaleString("fr").split('à')[1].replace(/\s/g,'')
+    // // let tReady = `${tFR.split(':')[0]}:${tFR.split(':')[1]}`
+    // this.search.time = tP
+    // this.results = this._api.fromTo(this.search)
+    //                         .map(
+    //                           (res:any) => {
+    //                             (res.connections)
+    //                             ? res.connections = res.connections.map(
+    //                                 (conn:any) => Object.assign({}, conn, {expanded:false})
+    //                               )
+    //                             : null;
+    //                             return res
+    //                           }
+    //                         )
   }
 
   // no api to buy ticket or get ticket price ... waiting for ;-)
