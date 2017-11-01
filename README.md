@@ -5,10 +5,13 @@
 The unofficial Swiss Train Schedule mobile PWA build with Angular & Ionicframework
 </blockquote>
 
-***work in proccess*** 
+***work in proccess***
 
 ## Overview
 This project present the performance advantage of a real [Progressive Web Application (PWA)](https://developers.google.com/web/progressive-web-apps/) VS [Conventional « Responsive » web application](https://en.wikipedia.org/wiki/Responsive_web_design). I take up the challenge and rewrite the web application of the Swiss Railways Timetable, with the latest current developers tools. For this challenge, I chose to use [Angular](https://angular.io/) and [Ionicframework](ionicframework.com), my current favorite toys to build web application & Hybrid Mobile application.
+
+## Google Audits Score
+![PWA Score](https://raw.githubusercontent.com/FazioNico/cff-mobile-pwa/master/resources/imgs/pwa-report.png)
 
 ## Install
 
