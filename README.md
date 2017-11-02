@@ -21,7 +21,7 @@ This project present the performance advantage of a real [Progressive Web Applic
 ![PWA Score](https://raw.githubusercontent.com/FazioNico/cff-mobile-pwa/master/resources/imgs/pwa-report-sbb.ch.png)
 
 ### [TestMySite](https://testmysite.withgoogle.com/intl/en-gb)
-![PWA Score](https://raw.githubusercontent.com/FazioNico/cff-mobile-pwa/master/resources/imgs/testmysite.jpg)
+![PWA Score](https://raw.githubusercontent.com/FazioNico/cff-mobile-pwa/master/resources/imgs/testmysite.png)
 
 ## For Developpers
 ### Prerequisites
