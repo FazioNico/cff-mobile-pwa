@@ -7,7 +7,7 @@
 */
 
 export const locale = {
-  "lang": "fr",
+  "lang": "it",
   "data": {
     "results": { // <= namespace for module/component translations
       "title": "Risultato",
