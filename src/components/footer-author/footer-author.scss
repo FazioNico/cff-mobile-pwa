@@ -1,0 +1,19 @@
+// @Author: Nicolas Fazio <webmaster-fazio>
+// @Date:   02-11-2017
+// @Email:  contact@nicolasfazio.ch
+// @Last modified by:   webmaster-fazio
+// @Last modified time: 02-11-2017
+
+footer-author {
+
+  p {
+    font-size: 1.2rem;
+    padding: 0px 0px 25px 0px;
+    color: color($colors, light, base);
+
+    span{
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}

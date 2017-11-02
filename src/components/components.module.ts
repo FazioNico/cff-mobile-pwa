@@ -19,12 +19,14 @@ import { ConnectionComponent } from './connection/connection';
 import { ExpandableComponent } from './expandable/expandable';
 import { FooterListComponent } from './footer-list/footer-list';
 import { TranslateSwitchComponent } from './translate-switch/translate-switch';
+import { FooterAuthorComponent } from './footer-author/footer-author';
 @NgModule({
 	declarations: [LogoSvgComponent,
     ConnectionComponent,
     ExpandableComponent,
     FooterListComponent,
-    TranslateSwitchComponent
+    TranslateSwitchComponent,
+    FooterAuthorComponent
 	],
 	imports: [
 		CommonModule,
@@ -38,7 +40,8 @@ import { TranslateSwitchComponent } from './translate-switch/translate-switch';
     ExpandableComponent,
     FooterListComponent,
     TranslateSwitchComponent,
-		TranslateModule // do not forguet to export TranslateModule !!
+		TranslateModule,
+    FooterAuthorComponent // do not forguet to export TranslateModule !!
 	]
 })
 export class ComponentsModule {}
