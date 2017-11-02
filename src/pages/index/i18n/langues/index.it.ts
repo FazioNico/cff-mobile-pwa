@@ -13,6 +13,8 @@ export const locale = {
       "title": "Cercare collegamento",
       "form": {
         from: 'Da',
+        departure: 'Partenza',
+        arrival: 'Arrivo',
         to: 'À',
         date: 'Data',
         time: 'Ora',

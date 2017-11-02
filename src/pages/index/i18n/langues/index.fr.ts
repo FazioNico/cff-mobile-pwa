@@ -3,7 +3,7 @@
 * @Date:   21-10-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 30-10-2017
+ * @Last modified time: 02-11-2017
 */
 
 export const locale = {
@@ -14,6 +14,8 @@ export const locale = {
       "form": {
         from: 'De',
         to: 'À',
+        departure: 'Départ',
+        arrival: 'Arrivée',
         date: 'Date',
         time: 'Heure',
         search: 'Rechercher'

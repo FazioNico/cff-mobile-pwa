@@ -13,6 +13,8 @@ export const locale = {
       "title": "Der SBB Fahrplan",
       "form": {
         from: 'Von',
+        departure: 'Abreise',
+        arrival: 'Ankunft',
         to: 'Nach',
         date: 'Datum',
         time: 'Zeit',

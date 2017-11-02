@@ -26,7 +26,7 @@ Ionic pages and navigation.
 
       <ion-item>
         <ion-label color="dark" stacked>{{ 'index.form.from'|translate }}</ion-label>
-        <ion-input (keyup)="autoComplet($event, 'from')" clearInput="true" type="text" name="from" formControlName="from"  placeholder="Départ"></ion-input>
+        <ion-input (keyup)="autoComplet($event, 'from')" clearInput="true" type="text" name="from" formControlName="from"  placeholder="{{ 'index.form.departure'|translate }}"></ion-input>
       </ion-item>
       <div *ngIf="cityList|async as cities" padding-left padding-right>
         <ion-item *ngIf="(dropDownActive === 'from')" [ngClass]="{'dropDown': true, 'open': ((cities||[]).length>0)}">
@@ -38,7 +38,7 @@ Ionic pages and navigation.
 
       <ion-item>
         <ion-label color="dark" stacked>{{ 'index.form.to'|translate }}</ion-label>
-        <ion-input (keyup)="autoComplet($event, 'to')" clearInput="true" type="text" name="to" formControlName="to"  placeholder="Déstination"></ion-input>
+        <ion-input (keyup)="autoComplet($event, 'to')" clearInput="true" type="text" name="to" formControlName="to"  placeholder="{{ 'index.form.arrival'|translate }}"></ion-input>
       </ion-item>
       <div *ngIf="cityList|async as cities" padding-left padding-right>
         <ion-item *ngIf="(dropDownActive === 'to')" [ngClass]="{'dropDown': true, 'open': ((cities||[]).length>0)}">
