@@ -3,7 +3,7 @@
  * @Date:   28-10-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 28-10-2017
+ * @Last modified time: 02-11-2017
  */
 
  export const locale = {
@@ -25,7 +25,6 @@
              </p>
              <a href="http://www.cff.ch/166" class="text__actionlink var_form" rel="external noopener noreferrer nofollow" target="_blank">
                  Dernières informations
-                 <span class="visuallyhidden">Ouverture du lien dans une nouvelle fenêtre.</span>
              </a>
            </div>
          `
@@ -44,32 +43,27 @@
                <ul class="mod_footer_sociallist">
                  <li class="mod_footer_sociallist_iconlink">
                    <a href="https://www.facebook.com/sbb.cff.ffs.ch/" class="mod_footer_sociallist_iconlink_link" rel="external noopener noreferrer nofollow" target="_blank">
-                     <span class="mod_footer_sociallist_iconlink_text">Afficher la page Facebook des CFF.</span>
-                     <span class="visuallyhidden">Ouverture du lien dans une nouvelle fenêtre.</span>
+                     <span class="mod_footer_sociallist_iconlink_text">Facebook CFF.</span>
                    </a>
                  </li>
                  <li class="mod_footer_sociallist_iconlink">
                    <a href="https://twitter.com/RailService" class="mod_footer_sociallist_iconlink_link" rel="external noopener noreferrer nofollow" target="_blank">
-                     <span class="mod_footer_sociallist_iconlink_text">Afficher le compte Twitter des CFF.</span>
-                     <span class="visuallyhidden">Ouverture du lien dans une nouvelle fenêtre.</span>
+                     <span class="mod_footer_sociallist_iconlink_text">Twitter CFF.</span>
                    </a>
                  </li>
                  <li class="mod_footer_sociallist_iconlink">
                    <a href="http://www.youtube.com/sbbcffffs" class="mod_footer_sociallist_iconlink_link" rel="external noopener noreferrer nofollow" target="_blank">
-                     <span class="mod_footer_sociallist_iconlink_text">Afficher la chaîne YouTube des CFF.</span>
-                     <span class="visuallyhidden">Ouverture du lien dans une nouvelle fenêtre.</span>
+                     <span class="mod_footer_sociallist_iconlink_text">YouTube CFF.</span>
                    </a>
                  </li>
                  <li class="mod_footer_sociallist_iconlink">
                    <a href="http://instagram.com/sbbcffffs" class="mod_footer_sociallist_iconlink_link" rel="external noopener noreferrer nofollow" target="_blank">
-                     <span class="mod_footer_sociallist_iconlink_text">Afficher le compte Instagram des CFF.</span>
-                     <span class="visuallyhidden">Ouverture du lien dans une nouvelle fenêtre.</span>
+                     <span class="mod_footer_sociallist_iconlink_text">Instagram CFF.</span>
                    </a>
                  </li>
                  <li class="mod_footer_sociallist_textlink">
                    <a href="http://blog.cff.ch/?noredirect=fr_FR" class="mod_footer_sociallist_textlink_link" rel="external noopener noreferrer nofollow" target="_blank">
                      Stories CFF
-                     <span class="visuallyhidden">Ouverture du lien dans une nouvelle fenêtre.</span>
                    </a>
                  </li>
                  <li class="mod_footer_sociallist_textlink">
@@ -100,7 +94,6 @@
                <li>
                  <a href="http://www.sbbcargo.com/fr/home.html" class="mod_footer_linklist_link" rel="external noopener noreferrer nofollow" target="_blank">
                      CFF Cargo
-                     <span class="visuallyhidden">Ouverture du lien dans une nouvelle fenêtre.</span>
                  </a>
                </li>
                <li>
