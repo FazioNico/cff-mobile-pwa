@@ -3,7 +3,7 @@
 * @Date:   21-10-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 01-11-2017
+ * @Last modified time: 02-11-2017
 */
 
 import { NgModule } from '@angular/core';
@@ -13,6 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { IndexI18nService } from "./index-i18n.service";
 import { locale as english } from './langues/index.en';
 import { locale as french } from './langues/index.fr';
+import { locale as german } from './langues/index.de';
 
 @NgModule({
   imports: [
@@ -25,6 +26,6 @@ export class IndexI18nModule {
   constructor(
     private translationLoader: IndexI18nService
   ){
-      this.translationLoader.loadTranslations(english, french);
+      this.translationLoader.loadTranslations(english, french, german);
   }
 }
