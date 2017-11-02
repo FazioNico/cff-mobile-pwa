@@ -3,7 +3,7 @@
 * @Date:   27-10-2017
 * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 31-10-2017
+ * @Last modified time: 02-11-2017
 */
 
 import { Component, Inject } from '@angular/core';
@@ -40,8 +40,8 @@ export class IndexPage {
     private _api:CffTransportProvider
   ) {
     this.form = fb.group({
-      from: ['Choulex, village', Validators.compose([Validators.required, Validators.minLength(2)])],
-      to: ['Lausanne', Validators.compose([Validators.required, Validators.minLength(2)])],
+      from: ['', Validators.compose([Validators.required, Validators.minLength(2)])],
+      to: ['', Validators.compose([Validators.required, Validators.minLength(2)])],
       date: [new Date(Date.now()).toISOString()],
       time: [new Date(Date.now()).toISOString()],
     });
