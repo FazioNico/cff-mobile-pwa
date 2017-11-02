@@ -18,6 +18,10 @@ export const availableLanguages:{code:string,name:string}[] = [
   {
     code: 'de',
     name: 'German'
+  },
+  {
+    code: 'it',
+    name: 'italian'
   }
 ];
 export const defaultLanguage = 'en';

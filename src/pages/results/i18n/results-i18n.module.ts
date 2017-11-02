@@ -14,6 +14,7 @@ import { ResultsI18nService } from "./results-i18n.service";
 import { locale as english } from './langues/results.en';
 import { locale as french } from './langues/results.fr';
 import { locale as german } from './langues/results.de';
+import { locale as italian } from './langues/results.it';
 
 @NgModule({
   imports: [
@@ -26,6 +27,6 @@ export class ResultsI18nModule {
   constructor(
     private translationLoader: ResultsI18nService
   ){
-      this.translationLoader.loadTranslations(english, french, german);
+      this.translationLoader.loadTranslations(english, french, german, italian);
   }
 }
