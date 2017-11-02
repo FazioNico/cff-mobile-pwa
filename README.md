@@ -74,7 +74,7 @@ $ ionic cordova build browser --release --prod
 ```
 
 ### Contribution
-Feel free to contrib to my stack.
+Feel free to contrib.
 - clone/fork project
 - `$ git checkout -b YOUR_BRANCH`
 - do your work...
