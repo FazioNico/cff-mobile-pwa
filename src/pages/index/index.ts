@@ -11,6 +11,8 @@ import { IonicPage, NavController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from "rxjs/Observable";
 
+import { TranslateService } from '@ngx-translate/core';
+
 import { CffTransportProvider } from "../../providers/cff-transport";
 
 /**
@@ -37,7 +39,8 @@ export class IndexPage {
   constructor(
     public navCtrl: NavController,
     @Inject(FormBuilder) fb: FormBuilder,
-    private _api:CffTransportProvider
+    private _api:CffTransportProvider,
+    public translate:TranslateService
   ) {
     this.form = fb.group({
       from: ['', Validators.compose([Validators.required, Validators.minLength(2)])],
@@ -62,7 +65,8 @@ export class IndexPage {
       from: (this.form.get('from')||{value:''}).value,
       to: (this.form.get('to')||{value:''}).value,
       date: dP,
-      time: tP
+      time: tP,
+      lang: this.getLang()
     }
 
     this.navCtrl.push('ResultsPage', {search:queryReady})
@@ -74,11 +78,15 @@ export class IndexPage {
       this.cityList = null;
       return
     }
-    this.cityList = this._api.autoComplete($event.target.value)
+    this.cityList = this._api.autoComplete($event.target.value, this.getLang())
   }
 
   selectCity(city:string, inputName:string){
     this.form.patchValue({[inputName]:city})
     this.cityList = null;
+  }
+
+  getLang():string{
+    return this.translate.currentLang.substring(0, 2).toLowerCase() || this.translate.defaultLang
   }
 }

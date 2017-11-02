@@ -3,12 +3,14 @@
  * @Date:   27-10-2017
  * @Email:  contact@nicolasfazio.ch
  * @Last modified by:   webmaster-fazio
- * @Last modified time: 31-10-2017
+ * @Last modified time: 02-11-2017
  */
 
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Observable } from "rxjs/Observable";
+
+import { TranslateService } from '@ngx-translate/core';
 
 import { CffTransportProvider} from "../../providers/cff-transport";
 
@@ -31,13 +33,14 @@ import { CffTransportProvider} from "../../providers/cff-transport";
 })
 export class ResultsPage {
 
-  public readonly search:{from:string,to:string,limit?:string,date:string,time:string}
+  public readonly search:{from:string,to:string,limit?:string,date:string,time:string, lang:string}
   public results:Observable<any>
 
   constructor(
     public readonly navCtrl: NavController,
     public readonly navParams: NavParams,
-    private readonly _api: CffTransportProvider
+    private readonly _api: CffTransportProvider,
+    public translate:TranslateService
   ) {
     if(!this.navParams.get('search')){
       window.location.href = './'
@@ -63,6 +66,7 @@ export class ResultsPage {
   }
 
   displayNext(time:any):void{
+    this.search.lang = this.getLang()
     this.search.time = `${time.split(' ')[1].split(':')[0]}:${time.split(' ')[1].split(':')[1]}`
     this.results = this._api.fromTo(this.search)
                             .map(
@@ -77,6 +81,9 @@ export class ResultsPage {
                             )
   }
 
+  getLang():string{
+    return this.translate.currentLang.substring(0, 2).toLowerCase()  || this.translate.defaultLang
+  }
   // no api to buy ticket or get ticket price ... waiting for ;-)
   buyTicket($event:Event, connection:any):void{
     $event.preventDefault()
